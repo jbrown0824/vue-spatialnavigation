@@ -4,7 +4,7 @@ export declare enum NavigationServiceDirection {
     Down = "down",
     Left = "left",
     Right = "right",
-    Enter = "enter",
+    Enter = "enter"
 }
 export declare class NavigationService {
     keyCodes: {

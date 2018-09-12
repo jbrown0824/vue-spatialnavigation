@@ -239,9 +239,12 @@ export class FocusElement {
 
   private defaultFocusNext() {
     if (this.$el) {
-      // check if we can find a sibling element
-      const next = this.$el.nextElementSibling;
-      // check if element exist and has id
+      let next = this.$el;
+
+      // look for the next sibling that has an id
+      while ((next = next.nextElementSibling) && !next.id);
+
+      // check if element exists and has id
       if (next && next.id) {
         // set focus to component
         this.doFocusElement(next.id);
@@ -251,9 +254,12 @@ export class FocusElement {
 
   private defaultFocusPrevious() {
     if (this.$el) {
-      // check if we can find a sibling element
-      const previous = this.$el.previousElementSibling;
-      // check if element exist and has current directive selector
+      let previous = this.$el;
+
+      // look for the next sibling that has an id
+      while ((previous = previous.previousElementSibling) && !previous.id) ;
+
+      // check if element exists and has id
       if (previous && previous.id) {
         // set focus to component
         this.doFocusElement(previous.id);

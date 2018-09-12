@@ -33,9 +33,9 @@ export declare class FocusElement {
     up(): void;
     down(): void;
     enter(): void;
-    private defaultFocusNext();
-    private defaultFocusPrevious();
-    private doFocusElement(id);
+    private defaultFocusNext;
+    private defaultFocusPrevious;
+    private doFocusElement;
 }
 declare const _default: {
     install: (Vue: any, options: SpatialNavigationOptions) => void;
